@@ -5,28 +5,24 @@ load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary")
 
 ts_library(
   name = "main",
-  srcs = ["index.ts"],
+  srcs = glob(["**/*.ts"]),
   deps = [
-    "//calculator:calculator",
-    "@npm//@types"
+    "@npm//@types",
+    "@npm//@nestjs",
+    "@npm//rxjs",
   ],
 )
 
 nodejs_binary(
   name = "helloworld",
   data = [
+    "@npm//@nestjs/common",
+    "@npm//@nestjs/core",
+    "@npm//@nestjs/platform-express",
+    "@npm//rxjs",
+    "@npm//reflect-metadata",
+    "@npm//tslib",
     ":main",
-    "//calculator:calculator",
-    "@npm//lodash",
   ],
-  entry_point = ":index.ts"
+  entry_point = ":main.ts"
 )
-
-# nodejs_binary(
-#   name = "helloworld",
-#   data = [
-#     "//calculator:calculator",
-#     "@npm//lodash",
-#   ],
-#   entry_point = ":index.js"
-# )

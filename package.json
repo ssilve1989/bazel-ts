@@ -10,6 +10,9 @@
     "@types/lodash": "^4.14.155",
     "typescript": "^3.9.5"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "scripts": {
     "start": "bazelisk run //...",
     "build": "bazelisk build //...",
@@ -19,6 +22,7 @@
     "bazel:lint-fix": "yarn bazelisk:format --lint=fix"
   },
   "workspaces": [
-    "packages/**"
+    "hello-world/**",
+    "calculator/**"
   ]
 }
