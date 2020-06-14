@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package stevez.proto;
+
+message HelloRequest {
+  required string name = 1;
+}
