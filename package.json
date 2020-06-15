@@ -11,6 +11,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "protobufjs": "^6.9.0",
     "tslib": "^2.0.0"
   },
   "scripts": {
@@ -22,7 +23,7 @@
     "bazel:lint-fix": "yarn bazel:format --lint=fix"
   },
   "workspaces": [
-    "hello-world/**",
+    "helloworld/**",
     "calculator/**"
   ]
 }

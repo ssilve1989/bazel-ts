@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package helloworld.proto.greeter;
+
+import "helloworld/proto/greeter/hello_reply.proto";
+import "helloworld/proto/greeter/hello_request.proto";
+
+service GreeterService {
+  rpc SayHello(HelloRequest) returns (HelloReply) {}
+}
